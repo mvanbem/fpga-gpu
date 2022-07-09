@@ -3,7 +3,9 @@
 /incremental_db/
 /output_files/
 /simulation/
-/.qsys_edit/
+*qsys*/
 *.bak
+*.bak.*
 *.rpt
 *.qws
+*~
