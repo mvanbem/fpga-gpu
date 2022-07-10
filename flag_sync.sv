@@ -1,19 +1,15 @@
 module flag_sync(
-    in_clk,
-    in_flag,
-    out_clk,
-    out_flag);
+    input        clk_in,
+    input        in_flag,
+    input        clk_out,
+    output logic out_flag
+);
 
-input in_clk;
-input in_flag;
-input out_clk;
-output reg out_flag;
+    logic in_flag_q;
 
-reg sync;
-
-always_ff @(posedge out_clk) begin
-    sync <= in_flag;
-    out_flag <= sync;
-end
+    always_ff @(posedge clk_out) begin
+        in_flag_q <= in_flag;
+        out_flag <= in_flag_q;
+    end
 
 endmodule
